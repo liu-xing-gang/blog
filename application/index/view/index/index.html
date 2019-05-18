@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="__STATIC__/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="__STATIC__/layui/css/layui.css" />
+    <link rel="stylesheet" href="__STATIC__/css/style.css" />
+  </head>
+  <body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <header class="a-header">
+          <button type="button" class="layui-btn layui-btn-primary btn-shrink">
+            <i class="layui-icon layui-icon-shrink-right"></i>
+          </button>
+            <ul class="a-group">
+              <li>
+                <dl>
+                  <dt class="name">admin</dt>
+                  <dt class="group">超级管理员</dd>
+                </dl>
+                <span class="avatar">
+                  <form action="" id="fileForm" method="post" enctype="multipart/form-data" runat="server">
+                    <input class="avatar-input" name="img" type="file" class="admin-avatar-file" id="_pic" title="设置管理员头像">
+                  </form>
+                  <img src="http://47.93.195.173:8000/images/admin.jpg">
+                </span>
+              </li>
+              <li class="separator"><a href=""><i class="fa fa-home"></a></i></li>
+              <li><a href=""><i class="fa fa-sign-out"></i></a></li>
+            </ul>
+        </header>
+        <section class="layui-side">
+          <div class="layui-side-scroll">
+            <div class="logo"><span>沙师弟个人博客</span></div>
+            <ul class="layui-nav layui-nav-tree" lay-shrink="all">
+              <li class="layui-nav-item layui-nav-itemed">
+                <a class="first" href="javascript:;">
+                  <i class="fa fa-home"></i> 
+                  <span class="a-menutxt">档案业务</span>
+                </a>
+                <dl class="layui-nav-child">
+                  <dd><a href="javascript:;"><span class="a-menutxt">高压档案入库</span></a></dd>
+                  <dd><a href="javascript:;"><span class="a-menutxt">其他档案入库</span></a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item active">
+                <a href="javascript:;" class="first"><i class="fa fa-motorcycle" aria-hidden="true"></i></i><span class="a-menutxt">个人工作台</span></a>
+                <dl class="layui-nav-child">
+                  <dd class="layui-nav-item">
+                    <a href="javascript:;"><span class="a-menutxt">我的借阅</span></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;"><span class="a-menutxt">密集柜信息管理</span></a></dd>
+                        <dd><a href="javascript:;"><span class="a-menutxt">档案盘点</span></a></dd>
+                      </dl>
+                  </dd>
+                  <dd><a href="javascript:;"><span class="a-menutxt">已办审批</span></a></dd>
+                  <dd><a href="javascript:;"><span class="a-menutxt">待办审批</span></a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:;" class="first"><i class="fa fa-space-shuttle" aria-hidden="true"></i><span
+                    class="a-menutxt">档案信息管理</span></a>
+                <dl class="layui-nav-child">
+                  <dd><a href="javascript:;"><span class="a-menutxt">密集柜信息管理</span></a></dd>
+                  <dd><a href="javascript:;"><span class="a-menutxt">档案盘点</span></a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="a-tabs">
+          <!-- 面包屑 -->
+          <!-- <span class="layui-breadcrumb" style="margin-left: 10px;">
+            <a href="">首页</a>
+            <a><cite>正文</cite></a>
+          </span> -->
+
+          <div class="layui-icon layui-icon-prev" layadmin-event="leftPage"></div>
+          <div class="layui-icon layui-icon-next" layadmin-event="rightPage"></div>
+          <div class="layui-icon layui-icon-down">
+            <a href="javascript:;" class="btn-tabs-close"><span class="layui-nav-more"></span></a>
+            <dl class="a-tabs-menu">
+              <dd ><a href="javascript:;">关闭当前标签页</a></dd>
+              <dd><a href="javascript:;">关闭其它标签页</a></dd>
+              <dd><a href="javascript:;">关闭全部标签页</a></dd>
+            </dl>
+          </div>
+          <div class="a-bar layui-tab-brief">
+            <ul class="layui-tab-title">
+              <li class="layui-this">高压档案入库<span class="a-bar-icon">
+                  <i class="layui-icon layui-icon-close"></i>
+                </span>
+              </li>
+              <li>密集柜信息管理<span class="a-bar-icon">
+                  <i class="layui-icon layui-icon-close"></i>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="layui-body">
+          <div class="a-tabs-item">
+            <iframe src="" frameborder="0"></iframe>
+          </div>
+          <!-- <div style="padding: 15px;" class="main-content">
+            <div class="layui-row layui-col-space10">
+              <div class="layui-col-md3 layui-col-sm4">
+                <div class="layui-card">
+          
+                </div>
+              </div>
+              <div class="layui-col-md3 layui-col-sm4">
+                <div class="layui-card">
+                </div>
+              </div>
+              <div class="layui-col-md3 layui-col-sm4">
+                <div class="layui-card">
+            
+                </div>
+              </div>
+              <div class="layui-col-md3 layui-col-sm4">
+                <div class="layui-card">
+            
+                </div>
+              </div>
+              
+            </div>
+          </div> -->
+        </section>
+        
+        <!-- <footer class="layui-footer">
+          © layui.com - 底部固定区域
+        </footer> -->
+    </div>
+    <script src="__STATIC__/layui/layui.js"></script>
+    <script>
+      layui
+        .config({
+          base: "__STATIC__/js/modules/" //你存放新模块的目录，注意，不是layui的模块目录
+        })
+        .use("index"); //加载入口
+    </script>
+    <script>
+      layui.use(['jquery'], function () {
+        var $ = layui.jquery;
+
+        // 切换侧边栏 
+        $('.btn-shrink').on('click', function () {
+          $('.layui-layout').toggleClass('shrink')
+        });
+
+        // 呈现收缩状态的菜单
+        $('.layui-nav-item').hover(function () {
+          if($(this).closest('.shrink') === null)
+            return;
+          else
+            $(this).addClass('active');
+
+          if($(this).find('.layui-nav-child').index() != -1 ){
+            $(' .shrink .layui-nav-tree').css('width', '100%')
+          }
+        }, function () {
+          $(this).removeClass('active')
+          $(' .shrink .layui-nav-tree').css('width', 'auto')
+        });
+
+        // 关闭tab页
+        $('.a-tabs .layui-icon-down').hover(function(){
+          $('.a-tabs-menu').show()
+        }, function () {
+            $('.a-tabs-menu').hide()
+        });
+      });
+    </script>
+  </body>
+</html>
