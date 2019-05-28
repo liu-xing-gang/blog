@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="__STATIC__/css/style.css" />
   </head>
   <body class="layui-layout-body">
-    <div class="layui-layout layui-layout-admin">
+    <div class="layui-layout layui-layout-admin shrink">
         <header class="a-header">
           <button type="button" class="layui-btn layui-btn-primary btn-shrink">
             <i class="layui-icon layui-icon-shrink-right"></i>
@@ -18,7 +18,7 @@
               <li>
                 <dl>
                   <dt class="name">admin</dt>
-                  <dt class="group">超级管理员</dd>
+                  <dt class="group">超级管理员</dd\\s
                 </dl>
                 <span class="avatar">
                   <form action="" id="fileForm" method="post" enctype="multipart/form-data" runat="server">
@@ -31,40 +31,32 @@
               <li><a href=""><i class="fa fa-sign-out"></i></a></li>
             </ul>
         </header>
-        <section class="layui-side">
+        <section class="layui-side ">
           <div class="layui-side-scroll">
-            <div class="logo"><span>沙师弟个人博客</span></div>
+            <div class="logo"><span>Blog</span></div>
             <ul class="layui-nav layui-nav-tree" lay-shrink="all">
-              <li class="layui-nav-item layui-nav-itemed">
+              <li class="layui-nav-item layui-nav-itemed active">
                 <a class="first" href="javascript:;">
                   <i class="fa fa-home"></i> 
-                  <span class="a-menutxt">档案业务</span>
+                  <span class="a-menutxt">文章</span>
                 </a>
                 <dl class="layui-nav-child">
-                  <dd><a href="javascript:;"><span class="a-menutxt">高压档案入库</span></a></dd>
-                  <dd><a href="javascript:;"><span class="a-menutxt">其他档案入库</span></a></dd>
-                </dl>
-              </li>
-              <li class="layui-nav-item active">
-                <a href="javascript:;" class="first"><i class="fa fa-motorcycle" aria-hidden="true"></i></i><span class="a-menutxt">个人工作台</span></a>
-                <dl class="layui-nav-child">
-                  <dd class="layui-nav-item">
-                    <a href="javascript:;"><span class="a-menutxt">我的借阅</span></a>
+                  <dd>
+                    <a href="javascript:;"><span class="a-menutxt">111</span></a>
+                    <a href="javascript:;"><span class="a-menutxt"><i class="layui-icon layui-icon-home"></i></span></a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;"><span class="a-menutxt">密集柜信息管理</span></a></dd>
-                        <dd><a href="javascript:;"><span class="a-menutxt">档案盘点</span></a></dd>
+                        <dd>
+                          <a href="javascript:;"><span class="a-menutxt"><i class="layui-icon layui-icon-home"></i></span></a>
+                          <a href="javascript:;"><span class="a-menutxt"><i class="layui-icon layui-icon-home"></i></span></a>
+                          <dl class="layui-nav-child">
+                              <dd><a href="javascript:;"><span class="a-menutxt"><i class="layui-icon layui-icon-home"></i></span></a></dd>
+                              <dd><a href="javascript:;"><span class="a-menutxt">其他档案入库</span></a></dd>
+                            </dl>
+                        </dd>
+                        <!-- <dd><a href="javascript:;"><span class="a-menutxt">其他档案入库</span></a></dd> -->
                       </dl>
                   </dd>
-                  <dd><a href="javascript:;"><span class="a-menutxt">已办审批</span></a></dd>
-                  <dd><a href="javascript:;"><span class="a-menutxt">待办审批</span></a></dd>
-                </dl>
-              </li>
-              <li class="layui-nav-item">
-                <a href="javascript:;" class="first"><i class="fa fa-space-shuttle" aria-hidden="true"></i><span
-                    class="a-menutxt">档案信息管理</span></a>
-                <dl class="layui-nav-child">
-                  <dd><a href="javascript:;"><span class="a-menutxt">密集柜信息管理</span></a></dd>
-                  <dd><a href="javascript:;"><span class="a-menutxt">档案盘点</span></a></dd>
+                  <dd><a href="javascript:;"><span class="a-menutxt">其他档案入库</span></a></dd>
                 </dl>
               </li>
             </ul>
@@ -77,9 +69,9 @@
             <a><cite>正文</cite></a>
           </span> -->
 
-          <div class="layui-icon layui-icon-prev" layadmin-event="leftPage"></div>
-          <div class="layui-icon layui-icon-next" layadmin-event="rightPage"></div>
-          <div class="layui-icon layui-icon-down">
+          <div class="icon layui-icon layui-icon-prev" layadmin-event="leftPage"></div>
+          <div class="icon layui-icon layui-icon-next" layadmin-event="rightPage"></div>
+          <div class="icon layui-icon layui-icon-down">
             <a href="javascript:;" class="btn-tabs-close"><span class="layui-nav-more"></span></a>
             <dl class="a-tabs-menu">
               <dd ><a href="javascript:;">关闭当前标签页</a></dd>
@@ -89,9 +81,7 @@
           </div>
           <div class="a-bar layui-tab-brief">
             <ul class="layui-tab-title">
-              <li class="layui-this">高压档案入库<span class="a-bar-icon">
-                  <i class="layui-icon layui-icon-close"></i>
-                </span>
+              <li class="layui-this home"><i class="layui-icon layui-icon-home"></i>
               </li>
               <li>密集柜信息管理<span class="a-bar-icon">
                   <i class="layui-icon layui-icon-close"></i>
@@ -152,19 +142,19 @@
         });
 
         // 呈现收缩状态的菜单
-        $('.layui-nav-item').hover(function () {
-          if($(this).closest('.shrink') === null)
-            return;
-          else
-            $(this).addClass('active');
+        // $('.layui-nav-item').hover(function () {
+        //   if($(this).closest('.shrink') === null)
+        //     return;
+        //   else
+        //     $(this).addClass('active');
 
-          if($(this).find('.layui-nav-child').index() != -1 ){
-            $(' .shrink .layui-nav-tree').css('width', '100%')
-          }
-        }, function () {
-          $(this).removeClass('active')
-          $(' .shrink .layui-nav-tree').css('width', 'auto')
-        });
+        //   if($(this).find('.layui-nav-child').index() != -1 ){
+        //     $(' .shrink .layui-nav-tree').css('width', '100%')
+        //   }
+        // }, function () {
+        //   $(this).removeClass('active')
+        //   $(' .shrink .layui-nav-tree').css('width', 'auto')
+        // });
 
         // 关闭tab页
         $('.a-tabs .layui-icon-down').hover(function(){
