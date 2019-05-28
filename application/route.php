@@ -21,3 +21,5 @@ use think\Route;
 // ];
 
 Route::any('test', 'index/index/test');
+Route::any('articles', 'index/article/index');
+Route::any('videos', 'index/video/index');

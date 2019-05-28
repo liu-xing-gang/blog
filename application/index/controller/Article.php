@@ -16,6 +16,8 @@ class Article extends Controller
     public function index()
     {
         //
+        $data = Db::table('articles')->limit(1, 15)->select();
+        return json($data);
     }
 
     /**

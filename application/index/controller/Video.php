@@ -4,6 +4,7 @@ namespace app\index\controller;
 
 use think\Controller;
 use think\Request;
+use think\Db;
 
 class Video extends Controller
 {
@@ -15,6 +16,8 @@ class Video extends Controller
     public function index()
     {
         //
+        $data = Db::table('videos')->limit(1, 15)->select();
+        return json($data);
     }
 
     /**
