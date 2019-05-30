@@ -5,6 +5,7 @@ namespace app\index\controller;
 use think\Controller;
 use think\Request;
 use think\Db;
+use app\index\utils\Pagination;
 
 class Article extends Controller
 {
@@ -13,11 +14,11 @@ class Article extends Controller
      *
      * @return \think\Response
      */
-    public function index()
+    public function index($page)
     {
-        //
-        $data = Db::table('articles')->limit(1, 15)->select();
-        return json($data);
+        $tid = input('tid');
+        $page = new Pagination($page, 'articles', 'tid', $tid);
+        return $page->json;
     }
 
     /**
@@ -50,6 +51,28 @@ class Article extends Controller
     public function read($id)
     {
         //
+        // if(!input('action'))
+        // {
+            $data = Db::table('articles')->where('article_id', $id)->find();
+            $prev = Db::table('articles')->where('tid', $data['tid'])->where('article_id', '<', $id)->max('article_id');
+            $next = Db::table('articles')->where('tid', $data['tid'])->where('article_id', '>', $id)->min('article_id');
+            return json(array('prev' => $prev, 'next' => $next, 'data' => $data));
+        // } 
+        // else
+        // {
+        //     switch(input('action'))
+        //     {
+        //         case 'prev':
+        //             $data = Db::table('articles')->where('tid', input('tid'))->where('article_id', '<', $id)->order('created_at', 'desc')->limit(1)->find();
+        //             return json($data);
+        //             break;
+        //         case 'next':
+        //             $data = Db::table('articles')->where('tid', input('tid'))->where('article_id', '>', $id)->order('created_at', 'asc')->limit(1)->find();
+        //             return json($data);
+        //             break;
+        //     }
+        // }
+        
     }
 
     /**
@@ -85,4 +108,5 @@ class Article extends Controller
     {
         //
     }
+
 }

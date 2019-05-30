@@ -17,9 +17,17 @@ use think\Route;
 //         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
 //         ':name' => ['index/hello', ['method' => 'post']],
 //     ],
-
 // ];
 
 Route::any('test', 'index/index/test');
-Route::any('articles', 'index/article/index');
+
+// Route::any('articles/list/:page', 'index/Article/index');
+// Route::any('articles/types', 'index/ArticleType/index');
+// Route::any('articles/read/:id', 'index/Article/read');
+Route::group('articles', [
+    'list/:page' => ['index/Article/index'],
+    'types' => ['index/ArticleType/index'],
+    'read/:id' => ['index/Article/read']
+]);
+
 Route::any('videos', 'index/video/index');
