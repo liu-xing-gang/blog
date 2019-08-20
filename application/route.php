@@ -31,3 +31,9 @@ Route::group('articles', [
 ]);
 
 Route::any('videos', 'index/video/index');
+
+Route::group('wxapp', [
+    'getOpenId' => ['index/Wxapp/getOpenId'],
+    'getAccount' => ['index/Wxapp/getAccountByOpenId'],
+    'index' => ['index/Wxapp/index']
+]);
